@@ -1,38 +1,30 @@
 .App {
-  text-align: center;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   height: 100%;
+   background-size: cover;
+   background-image: url("https://wallpaperaccess.com/full/790750.png");
+   object-fit: cover;
+   background-repeat: repeat;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.titulo2 {
+   position: absolute;
+   font-family: ink free, MV Boli, Comic Sans MS;
+   color: rgb(247, 222, 6);
+   font-size: 2.5em;
+   left: 40%;
+   top: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.titulo {
+   font-family: ink free, MV Boli, Comic Sans MS;
+   color: rgb(247, 222, 6);
+   font-size: 10rem;
+   left: 20%;
+   top: 30%;
+   position: fixed;
+   opacity: 0.8;
+   z-index: 1;
 }

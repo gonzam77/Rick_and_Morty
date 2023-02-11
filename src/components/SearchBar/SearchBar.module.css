@@ -1,0 +1,31 @@
+.searchBar {
+    display: flex;
+    gap: 10px
+}
+
+.searchButton {
+    cursor: pointer;
+    font-size: 1em;
+    height: 30px;
+    width: 80px;
+    color: rgb(235, 243, 235);
+    background: rgb(112, 227, 181);
+    background: radial-gradient(circle, rgba(112, 227, 181, 1) 0%, rgb(114, 93, 201) 100%);
+    border-radius: 1rem;
+    transition: background-color .2s;
+}
+.searchInput {
+    font-size: 1em;
+    border-radius: 10px;
+    height: 2em;
+    width: 10em;
+    color: white;
+    background: rgb(22, 104, 20);
+    background: linear-gradient(0deg, rgb(21, 109, 20) 0%, rgb(31, 103, 226) 100%);
+}
+.searchButton:hover {
+    color: black;
+    background: rgb(37, 241, 81);
+    height: 35px;
+    width: 85px;
+}

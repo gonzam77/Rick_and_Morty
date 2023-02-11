@@ -1,0 +1,23 @@
+.container {
+    align-self: center;
+    border-radius: 50px;
+    background-color: rgb(75, 133, 114);
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15%;
+    z-index: 3;
+}
+
+.image {
+    margin-top: 5px;
+}
+.img{
+    border-radius: 50%;
+}
+
+.info{
+    color: greenyellow;
+    font-size: 2rem;
+}

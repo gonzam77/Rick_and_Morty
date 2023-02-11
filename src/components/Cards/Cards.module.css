@@ -1,0 +1,35 @@
+.cardsStyle {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.clean {
+    display: flex;
+    justify-content:end;
+}
+
+.cleanButton {
+    margin-right: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    height: 30px;
+    width: 80px;
+    color: rgb(235, 243, 235);
+    background: rgb(137, 112, 227);
+    background: radial-gradient(circle, rgb(188, 6, 243) 0%, rgb(114, 93, 201) 100%);
+    border-radius: 1rem;
+    transition: background-color .2s;
+}
+.cleanButton:hover {
+    color: black;
+    background: rgb(37, 241, 81);
+    height: 35px;
+    width: 85px;
+}
+

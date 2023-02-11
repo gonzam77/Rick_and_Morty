@@ -1,0 +1,55 @@
+.nav {
+    display: flex;
+    padding: 10px;
+    border-radius: 15px;
+    min-height: 10vh;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    background: rgb(37, 195, 34);
+    background: linear-gradient(0deg, rgba(37, 195, 34, 1) 0%, rgba(9, 232, 241, 0.4906337535014006) 100%);
+}
+
+.searchBar {
+    margin-left: auto;
+}
+
+
+.button1 {
+
+    cursor: pointer;
+    font-size: 1em;
+    height: 30px;
+    width: 80px;
+    color: rgb(235, 243, 235);
+    background: rgb(112, 227, 181);
+    background: radial-gradient(circle, rgba(112, 227, 181, 1) 0%, rgb(114, 93, 201) 100%);
+    border-radius: 1rem;
+    transition: background-color .2s;
+}
+
+.button2 {
+    cursor: pointer;
+    font-size: 1em;
+    height: 30px;
+    width: 80px;
+    color: rgb(235, 243, 235);
+    background: rgb(112, 227, 181);
+    background: radial-gradient(circle, rgba(112, 227, 181, 1) 0%, rgb(114, 93, 201) 100%);
+    border-radius: 1rem;
+    transition: background-color .2s;
+}
+
+.button1:hover {
+    color: black;
+    background: rgb(37, 241, 81);
+    height: 35px;
+    width: 85px;
+}
+
+.button2:hover {
+    color: black;
+    background: rgb(37, 241, 81);
+    height: 35px;
+    width: 85px;
+}

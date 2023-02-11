@@ -1,0 +1,16 @@
+.container{
+    font-family: ink free, MV Boli, Comic Sans MS;
+    font-size: 1.2rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(232, 248, 4);
+    height: 100vh;
+    margin-top: 10px;
+    padding-left: 10px;
+    background-color: black;
+    border-radius: 10px;
+    z-index: 3;
+    opacity: 75%;
+}
