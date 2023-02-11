@@ -12,12 +12,15 @@
 
 .image {
     margin-top: 5px;
+    margin-right: 5px;
 }
 .img{
     border-radius: 50%;
 }
 
 .info{
+    margin-left: 10px;
+    margin-bottom: 15px;
     color: greenyellow;
     font-size: 2rem;
 }

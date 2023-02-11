@@ -15,7 +15,7 @@
 }
 
 
-.button1 {
+.home {
 
     cursor: pointer;
     font-size: 1em;
@@ -28,7 +28,18 @@
     transition: background-color .2s;
 }
 
-.button2 {
+.about {
+    cursor: pointer;
+    font-size: 1em;
+    height: 30px;
+    width: 80px;
+    color: rgb(235, 243, 235);
+    background: rgb(112, 227, 181);
+    background: radial-gradient(circle, rgba(112, 227, 181, 1) 0%, rgb(114, 93, 201) 100%);
+    border-radius: 1rem;
+    transition: background-color .2s;
+}
+.login {
     cursor: pointer;
     font-size: 1em;
     height: 30px;
@@ -40,14 +51,20 @@
     transition: background-color .2s;
 }
 
-.button1:hover {
+.home:hover {
+    color: black;
+    background: rgb(37, 241, 81);
+    height: 35px;
+    width: 85px;
+}
+.login:hover {
     color: black;
     background: rgb(37, 241, 81);
     height: 35px;
     width: 85px;
 }
 
-.button2:hover {
+.about:hover {
     color: black;
     background: rgb(37, 241, 81);
     height: 35px;

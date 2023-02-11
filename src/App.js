@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './App.css'
 import Cards from './components/Cards/Cards.jsx'
 import Nav from './components/Nav/Nav.jsx';
-import { Route, Routes, useParams } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail';
+import Form from './components/Form/Form'
 
 
 
@@ -47,7 +48,7 @@ function App() {
           element={<Cards characters={characters} onClose={onClose} clean={clean} />}
         />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Form />} />
+        <Route path="/" element={<Form />} />
         <Route path="/detail/:detailId" element={<Detail />} />
       </Routes>
 

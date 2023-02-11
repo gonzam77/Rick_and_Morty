@@ -7,12 +7,17 @@ function Nav({ onSearch }) {
         <div className={style.nav}>
             <div>
                 <Link to="/home">
-                    <button className={style.button1}>Home</button>
+                    <button className={style.home}>Home</button>
                 </Link>
             </div>
+            {/* <div>
+                <Link to="/">
+                    <button className={style.login}>Login</button>
+                </Link>
+            </div> */}
             <div>
                 <Link to="/about">
-                    <button className={style.button2}>About</button>
+                    <button className={style.about}>About</button>
                 </Link>
             </div>
             <div className={style.searchBar}>
