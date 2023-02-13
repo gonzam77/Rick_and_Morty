@@ -1,20 +1,23 @@
-function Validate(username, password) {
+function Validation({username, password}) {
+   
+
     const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-    var errors = {};
-    errors["username"] = username;
-    errors["password"] = password;
-
-    if (!username) {
-        errors.username = "Se requiere un nombre/email";
+    const regexPassword = /^[a-zA-Z0-9]{6,10}$/i;
+    
+    var errors = {
+    };
+    
+    if (!username || !regexEmail.test(username)) {
+        errors.username = "Debe ser un correo electrónico"; 
+    }  
+    if (username.length > 35) {
+        errors.username = "No puede tener mas de 35 caracteres";
     }
-    if (!regexEmail.test(username)) {
-        errors.email = "Debe ser un correo electrónico";
+    if (!password || !regexPassword.test(password) || !password.match(/\d/)) {
+        errors.password = "De tener 1 numero y ser entre 6 y 10 caracateres";
     }
-    if (!password) {
-        errors.password = "Se requiere password";
-    }
-
+   
     return errors;
 }
 
-export default Validate;
+export default Validation;

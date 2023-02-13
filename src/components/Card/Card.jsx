@@ -8,7 +8,7 @@ function Card({name, image, species, gender, id, onClose}) {
    return (
       <div className={style.container}>
          <button className={style.closeButton} onClick={onClose}>X</button>
-         <NavLink to={`/detail/${id}`}>
+         <NavLink to={`/detail/${id}`} style={{textDecoration: 'none'}}>
             <h2 className={style.name}>{name}</h2>
          </NavLink>
          <img className={style.image} src={image} alt={name} />

@@ -14,9 +14,18 @@
     margin-left: auto;
 }
 
-
+.logout {
+    cursor: pointer;
+    font-size: 1em;
+    height: 30px;
+    width: 80px;
+    color: rgb(235, 243, 235);
+    background: rgb(137, 112, 227);
+    background: radial-gradient(circle, rgb(188, 6, 243) 0%, rgb(114, 93, 201) 100%);
+    border-radius: 1rem;
+    transition: background-color .2s;
+}
 .home {
-
     cursor: pointer;
     font-size: 1em;
     height: 30px;
@@ -39,18 +48,13 @@
     border-radius: 1rem;
     transition: background-color .2s;
 }
-.login {
-    cursor: pointer;
-    font-size: 1em;
-    height: 30px;
-    width: 80px;
-    color: rgb(235, 243, 235);
-    background: rgb(112, 227, 181);
-    background: radial-gradient(circle, rgba(112, 227, 181, 1) 0%, rgb(114, 93, 201) 100%);
-    border-radius: 1rem;
-    transition: background-color .2s;
-}
 
+.logout:hover {
+    color: black;
+    background: rgb(37, 241, 81);
+    height: 35px;
+    width: 85px;
+}
 .home:hover {
     color: black;
     background: rgb(37, 241, 81);

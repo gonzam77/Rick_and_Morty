@@ -1,0 +1,39 @@
+.warning {
+  border: solid red 1px;
+  border-radius: 0.2em;
+}
+
+.danger {
+  font-size: 10px;
+  color: red;
+  margin-left: 10em;
+}
+
+.container {
+  width: 100vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: greenyellow;
+  width: 75vw;
+  height: 75vh;
+  border: 1px solid white;
+  border-radius: 10px;
+  z-index: 3;
+  opacity: 90%;
+}
+
+.login {
+  border-radius: 4px;
+  color: rgb(255, 3, 3);
+  background: rgb(112, 227, 181);
+  background: radial-gradient(circle, rgba(112, 227, 181, 1) 0%, rgb(114, 93, 201) 100%);
+}

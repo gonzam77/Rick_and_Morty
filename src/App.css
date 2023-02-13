@@ -1,12 +1,11 @@
 .App {
+   width: 97%;
    display: flex;
    flex-direction: column;
    min-height: 100vh;
    height: 100%;
    background-size: cover;
    background-image: url("https://wallpaperaccess.com/full/790750.png");
-   object-fit: cover;
-   background-repeat: repeat;
 }
 
 .titulo2 {
