@@ -11,17 +11,20 @@ import Form from './components/Form/Form'
 
 
 
+
 function App() {
 
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
   const username = 'gonzam77@gmail.com';
-  const password = 'huevo1';
+  const password = 'henry1';
 
 
   const clean = (event) => {
     setCharacters([])
   }
+
+  
 
   function onSearch(character) {
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
@@ -42,7 +45,7 @@ function App() {
     }
   }
 
-  const logout = (event)=> {
+  const logout = () => {
     setAccess(false);
   }
 

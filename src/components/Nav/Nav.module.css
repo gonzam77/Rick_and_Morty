@@ -25,6 +25,7 @@
     border-radius: 1rem;
     transition: background-color .2s;
 }
+
 .home {
     cursor: pointer;
     font-size: 1em;
@@ -55,12 +56,14 @@
     height: 35px;
     width: 85px;
 }
+
 .home:hover {
     color: black;
     background: rgb(37, 241, 81);
     height: 35px;
     width: 85px;
 }
+
 .login:hover {
     color: black;
     background: rgb(37, 241, 81);

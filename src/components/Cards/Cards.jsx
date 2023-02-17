@@ -1,7 +1,7 @@
 import Card from '../Card/Card.jsx';
 import styles from './Cards.module.css';
 
-function Cards({ characters, onClose, clean }) {
+function Cards({ characters, onClose, clean, list }) {
 
    return (
       <div>
@@ -26,5 +26,6 @@ function Cards({ characters, onClose, clean }) {
       </div>
    )
 }
+            
 
 export default Cards;
