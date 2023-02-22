@@ -1,0 +1,23 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/server.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gonzam77/Rick_and_Morty.git"
+  },
+  "author": "Medina Gonzalo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gonzam77/Rick_and_Morty/issues"
+  },
+  "homepage": "https://github.com/gonzam77/Rick_and_Morty#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
