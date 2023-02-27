@@ -22,8 +22,8 @@ const About = () => {
             <p>En este proyacto se usaron estas tecnologias:</p>
             <ul className={style.unorderedList}>
                 {
-                    techSkills.map(skill => (
-                        <li className={style.listItem} key={skill}>{skill.tech}<img src={skill.image} alt={skill.tech} /></li>
+                    techSkills.map((skill,index) => (
+                        <li className={style.listItem} key={index}>{skill.tech}<img src={skill.image} alt={skill.tech} /></li>
                     ))
                 }
             </ul>

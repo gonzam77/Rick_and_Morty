@@ -6,6 +6,7 @@ import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form'
+import Favorites from "./components/Favorites/Favorites"
 
 
 
@@ -24,10 +25,10 @@ function App() {
     setCharacters([])
   }
 
-  
+
 
   function onSearch(character) {
-    fetch(`https://localhost:3001/rickandmorty/character/${character}`)
+    fetch(`https://rickandmortyapi.com/api/character/${character}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {
@@ -66,10 +67,10 @@ function App() {
   return (
     <div className='App' style={{ padding: '25px' }}>
       <h1 className="titulo">Rick and Morty</h1>
-      <h2 className="titulo2">Rick and Morty</h2>
+      {location.pathname !== '/favorites' && <h2 className="tituloChico">Rick and Morty</h2>}
       {location.pathname !== "/" && <Nav access={access} logout={logout} className='nav' onSearch={onSearch} />}
-
       <Routes>
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/" element={<Form login={login} />} />
         <Route
           path="/home"

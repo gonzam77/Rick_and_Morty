@@ -9,7 +9,7 @@ function SearchBar({ onSearch }) {
    const save = (event) => {
       setCharacter({
          ...character,
-         name: event.target.value
+         id: event.target.value
       })
    }
    
@@ -19,19 +19,19 @@ function SearchBar({ onSearch }) {
       if (event.key === 'Enter') {
          navigate("/home")
          buscar();
-         character.name = "";
+         character.id = "";
       }
    };
 
    const buscar = () => {
-      onSearch(character.name)
+      onSearch(character.id)
       navigate("/home")
-      character.name = "";
+      character.id = "";
    }
 
    return (
       <div className={style.searchBar}>
-         <input value={character.name} onChange={save} className={style.searchInput} onKeyDown={handleKeyDown} type='search' />
+         <input value={character.id} onChange={save} className={style.searchInput} onKeyDown={handleKeyDown} type='search' />
          <button className={style.searchButton} onClick={buscar}>Agregar</button>
       </div>
    );

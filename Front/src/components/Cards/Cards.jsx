@@ -1,7 +1,7 @@
 import Card from '../Card/Card.jsx';
 import styles from './Cards.module.css';
 
-function Cards({ characters, onClose, clean, list }) {
+function Cards({ characters, onClose, clean }) {
 
    return (
       <div>
@@ -10,9 +10,9 @@ function Cards({ characters, onClose, clean, list }) {
          </div>
          <div className={styles.cardsStyle}>
             {
-               characters.map(({ name, species, gender, image, id }, index) => {
+               characters.map(({ name, species, gender, image, id }) => {
                   return <Card
-                     key={index}
+                     key={id}
                      name={name}
                      species={species}
                      gender={gender}
