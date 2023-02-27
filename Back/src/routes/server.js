@@ -8,18 +8,15 @@ const PORT = 3001;
 
 http.createServer((req, res) => {
 
-    // res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', '*');
 
     if (req.url.includes("rickandmorty/character")) {
-        console.log(req.url)
-
-        // let id = req.url.split('/').at(-1)
-        // // let characterFilter = characters.filter(element => element.id === Number(id))
-        // let characterFilter = characters.find(element => element.id === Number(id))
-        // res.writeHead(200, {"Content-type":"application/json"}).end(JSON.stringify(characterFilter))
+        let id = req.url.split('/').at(-1)
+        let characterFilter = characters.find(element => element.id === Number(id))
+        res.writeHead(200, {"Content-type":"application/json"}).end(JSON.stringify(characterFilter))
     }
 
 
-}).listen(PORT, "localhost");
+}).listen(3001, "localhost");
 
 
