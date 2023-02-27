@@ -6,40 +6,51 @@ const initialState = {
 };
 
 function reducer(state = initialState, { type, payload }) {
+    
+    const { myFavorites, allCharacters } = state
+
     switch (type) {
         case ADD_FAVORITES:
             return {
                 ...state,
-                myFavorites: [...state.myFavorites, payload]
+                allCharacters: [...allCharacters, payload],
+                myFavorites: [...allCharacters, payload]
 
             }
 
         case DELETE_FAVORITES:
             return {
                 ...state,
-                myFavorites: state.myFavorites.filter(element => element.id !== payload)
+                myFavorites: myFavorites.filter(element => element.id !== payload),
+                allCharacters: allCharacters.filter(element => element.id !== payload)
             }
-        // case FILTER:
-        //     return {
-        //         ...state,
-        //         myFavorites: state.allCharacters.filter(char => char.gender === payload)
+        case FILTER:
+            if (payload === "Todos") {
+                return {
+                    myFavorites: allCharacters
+                }
+            } else {
+                return {
+                    ...state,
+                    myFavorites: allCharacters.filter(char => char.gender === payload)
 
-        //     }
-        // case ORDER:
+                }
+            }
+        case ORDER:
+            if (payload === "Ascendente") {
+                return {
+                    ...state,
+                    myFavorites: allCharacters.sort((a, b) => a.id - b.id)
+                }
+            }
+            if (payload === "Descendente") {
+                return {
+                    ...state,
+                    myFavorites: allCharacters.sort((a, b) => b.id - a.id)
+                }
+            }
+            return{...state}
 
-        //     if (payload === "Ascendente") {
-        //         return {
-        //             ...state,
-        //             allCharacters: state.allCharacters.sort((a,b) => a.id - b.id)
-        //         }
-        //     }
-        //     if(payload === "Descendente") {         
-        //         return {
-        //             ...state,
-        //             allCharacters: state.allCharacters.sort((a,b) => b.id - a.id)
-        //         }
-        //     }
-        //     return
         default:
             return { ...state }
     }

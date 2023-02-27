@@ -51,8 +51,8 @@ function Card(props) {
          </NavLink>
          <img className={style.image} src={props.image} alt={props.name} />
          <div className={style.details}>
-            <h2 className={style.specie}>{props.species}</h2>
-            <h2 className={style.gander}>{props.gender}</h2>
+            <h3 className={style.specie}>{props.species}</h3>
+            <h3 className={style.gander}>{props.gender}</h3>
          </div>
       </div>
    );

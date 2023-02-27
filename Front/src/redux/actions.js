@@ -14,16 +14,16 @@ export const deleteFavorites = (id) => {
     }
 }
 
-// export const filterCards = (gender) => {
-//     return {
-//         type: FILTER,
-//         payload: gender
-//     }
-// }
+export const filter = (gender) => {
+    return {
+        type: FILTER,
+        payload: gender
+    }
+}
 
-// export const order = (id) => {
-//     return {
-//         type: ORDER,
-//         payload: id
-//     }
-// }
+export const order = (order) => {
+    return {
+        type: ORDER,
+        payload: order
+    }
+}

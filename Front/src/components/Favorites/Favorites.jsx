@@ -1,40 +1,42 @@
 import { connect } from 'react-redux'
 import Card from '../Card/Card'
 import style from './Favorites.module.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import * as actions from '../../redux/actions'
 
 
 function Favorites(props) {
 
-    // const dispatch  = useDispatch();
+    const dispatch  = useDispatch();
+    
 
-    // const handleOrder = (event) => {
-    //     dispatch(actions.order(event.target.value))
-    // }
-    // const handleFilter = (event) => {
-    //     dispatch(actions.filterCards(event.target.value))
-    // }
+    const handleOrder = (event) => {
+        dispatch(actions.order(event.target.value))
+    }
+    const handleFilter = (event) => {
+        dispatch(actions.filter(event.target.value))
+    }
     
     return (
         <div>
             <div className={style.container}>
                 <h2 className={style.title}>My favorites</h2>
             </div>
-            {/* <div>
+            <div>
                 <select name="order" onChange={handleOrder}>
-                    <option value="order" disable="disable">Order By...</option>
+                    <option value="order" disabled="disabled" selected>Order By...</option>
                     <option value="Ascendente">Ascendente</option>
                     <option value="Descendente">Descendente</option>
                 </select>
                 <select name="gender" onChange={handleFilter}>
-                    <option value="filter" disable="disable">Filter By...</option>
+                    <option value="filter" disabled="disabled" selected>Filter By...</option>
+                    <option value="Todos">Todos</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Genderless">Genderless</option>
                     <option value="unknown">unknown</option>
                 </select>
-            </div> */}
+            </div>
             <div className={style.favorites}>
                 {
                     props.myFavorites.map(element => {

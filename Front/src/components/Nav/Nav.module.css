@@ -14,7 +14,7 @@
     margin-left: auto;
 }
 
-.favorites {
+/* .favorites {
     cursor: pointer;
     font-size: 1em;
     height: 30px;
@@ -25,7 +25,7 @@
     border-radius: 1rem;
     transition: background-color .2s;
 
-}
+} */
 
 .logout {
     cursor: pointer;
@@ -51,7 +51,7 @@
     transition: background-color .2s;
 }
 
-.about {
+/* .about {
     cursor: pointer;
     font-size: 1em;
     height: 30px;
@@ -61,14 +61,14 @@
     background: radial-gradient(circle, rgba(112, 227, 181, 1) 0%, rgb(114, 93, 201) 100%);
     border-radius: 1rem;
     transition: background-color .2s;
-}
+} */
 
-.favorites:hover {
+/* .favorites:hover {
     color: black;
     background: rgb(37, 241, 81);
     height: 35px;
     width: 85px;
-}
+} */
 
 .logout:hover {
     width: 85px;
@@ -91,9 +91,9 @@
     width: 85px;
 }
 
-.about:hover {
+/* .about:hover {
     color: black;
     background: rgb(37, 241, 81);
     height: 35px;
     width: 85px;
-}
+} */

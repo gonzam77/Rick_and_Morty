@@ -6,7 +6,7 @@
     background: radial-gradient(circle, rgba(112, 227, 181, 1) 0%, rgba(79, 48, 201, 1) 100%);
     font-family: cursive;
     font-size: 10px;
-    border: 2px solid rgb(106, 241, 106);
+    border: 2px solid rgb(107, 245, 107);
     border-radius: 2rem;
     width: 20em;
     height: 30em;
@@ -18,16 +18,17 @@
 }
 
 .details {
+    font-size: 1.3em;
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 35px;
 }
 
 .name {
     margin-top: 0px;
     color: rgb(6, 240, 38);
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .gander{

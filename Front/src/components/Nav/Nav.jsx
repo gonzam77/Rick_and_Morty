@@ -10,10 +10,10 @@ function Nav({ onSearch, logout }) {
                 <button className={style.home}>Home</button>
             </Link>
             <Link to="/about">
-                <button className={style.about}>About</button>
+                <button className={style.home}>About</button>
             </Link>
             <Link to="/favorites">
-                <button className={style.favorites}>Favorites</button>
+                <button className={style.home}>Favorites</button>
             </Link>
             <button onClick={logout} className={style.logout}>Logout</button>
             <div className={style.searchBar}>
