@@ -3,6 +3,23 @@
     gap: 10px
 }
 
+.busqueda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.danger {
+    font-size: 10px;
+    color: red;
+    margin-left: 10em;
+}
+
+.warning {
+    border: solid red 1px;
+    border-radius: 0.2em;
+}
+
 .searchButton {
     cursor: pointer;
     font-size: 1em;
@@ -14,6 +31,7 @@
     border-radius: 1rem;
     transition: background-color .2s;
 }
+
 .searchInput {
     font-size: 1em;
     border-radius: 10px;
@@ -23,6 +41,7 @@
     background: rgb(22, 104, 20);
     background: linear-gradient(0deg, rgb(21, 109, 20) 0%, rgb(31, 103, 226) 100%);
 }
+
 .searchButton:hover {
     color: black;
     background: rgb(37, 241, 81);
