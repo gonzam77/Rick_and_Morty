@@ -9,10 +9,6 @@ import Form from './components/Form/Form'
 import Favorites from "./components/Favorites/Favorites"
 
 
-
-
-
-
 function App() {
 
   const [characters, setCharacters] = useState([]);
@@ -24,7 +20,6 @@ function App() {
   const clean = (event) => {
     setCharacters([])
   }
-
 
 
   function onSearch(character) {
