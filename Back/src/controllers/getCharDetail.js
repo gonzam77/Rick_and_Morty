@@ -16,6 +16,7 @@ const getCharDetail = async function (req, res) {
             species: data.species,
             origin: data.origin?.name
         }
+        console.log(characterDetail);
         return res.status(200).json(characterDetail)
     } catch (error) {
         return res.status(500).json(error.message)

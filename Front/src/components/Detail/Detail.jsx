@@ -4,10 +4,10 @@ import style from "./Detail.module.css"
 
 const Detail = () => {
     const [character, setCharacter] = useState({});
-    const { id } = useParams();
+    const { detailId } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:3001/rickandmorty/detail/${id}`)
+        fetch(`http://localhost:3001/rickandmorty/detail/${detailId}`)
             .then((response) => response.json())
             .then((char) => {
                 if (char.name) {
@@ -21,7 +21,7 @@ const Detail = () => {
                 return err;
             });
         return setCharacter({});
-    }, [id]);
+    }, [detailId]);
 
     const navigate = useNavigate()
     const backToHome = () => navigate("/home")
