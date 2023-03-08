@@ -17,13 +17,13 @@ function App() {
   const password = 'henry1';
 
 
-  const clean = (event) => {
+  const clean = () => {
     setCharacters([])
   }
 
 
-  function onSearch(character) {
-    fetch(`http://localhost:3001/rickandmorty/onsearch/${character}`)
+  function onSearch(id) {
+    fetch(`http://localhost:3001/rickandmorty/onsearch/${id}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {

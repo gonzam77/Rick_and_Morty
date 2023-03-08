@@ -6,7 +6,7 @@ const getCharDetail = async function (req, res) {
 
     try {
         const {id} = req.params
-        const response = await axios(URL + Number(id))
+        const response = await axios(URL + id)
         const data = response.data
         characterDetail = {
             name: data.name,
