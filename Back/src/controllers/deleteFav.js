@@ -10,4 +10,4 @@ const deleteFav = (req, res) => {
     }
 }
 
-module.exports = deleteFav
+module.exports = deleteFav;
