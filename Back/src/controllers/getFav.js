@@ -1,4 +1,4 @@
-var { favorites } = require("../utils/favs")
+let favorites = require("../utils/favs")
 
 const getFav = (req, res) => {
     try {

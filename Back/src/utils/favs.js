@@ -1,3 +1,3 @@
-var favorites = [];
+let favorites = [];
 
-module.exports = { favorites };
+module.exports = favorites;

@@ -1,4 +1,4 @@
-let { favorites } = require("../utils/favs");
+let favorites = require("../utils/favs");
 
 const deleteFav = (req, res) => {
     try {

@@ -1,4 +1,4 @@
-const { favorites } = require("../utils/favs")
+let favorites = require("../utils/favs")
 
 const postFav = (req, res) => {
     try {
