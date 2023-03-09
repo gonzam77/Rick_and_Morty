@@ -1,16 +1,28 @@
 import { DELETE_FAVORITES, ADD_FAVORITES, FILTER, ORDER } from "./action-types"
+import axios from "axios";
 
 export const addFavorites = (character) => {
-    return {
-        type: ADD_FAVORITES,
-        payload: character
+    return function (dispatch) {
+        axios
+            .post(`http://localhost:3001/rickandmorty/fav`, character)
+            .then(response => {
+                return dispatch({
+                    type: ADD_FAVORITES,
+                    payload: response.data,
+                })
+            })
     }
 }
 
 export const deleteFavorites = (id) => {
-    return {
-        type: DELETE_FAVORITES,
-        payload: id
+    return function (dispatch) {
+        axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`)
+            .then(response => {
+                return dispatch({
+                    type: DELETE_FAVORITES,
+                    payload: response.data,
+                })
+            })
     }
 }
 

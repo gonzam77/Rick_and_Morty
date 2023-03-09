@@ -3,7 +3,6 @@ const URL = 'http://rickandmortyapi.com/api/character/';
 
 
 const getCharDetail = async function (req, res) {
-
     try {
         const {id} = req.params
         const response = await axios(URL + id)

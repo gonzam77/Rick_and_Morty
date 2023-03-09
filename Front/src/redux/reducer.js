@@ -13,16 +13,16 @@ function reducer(state = initialState, { type, payload }) {
         case ADD_FAVORITES:
             return {
                 ...state,
-                allCharacters: [...allCharacters, payload],
-                myFavorites: [...allCharacters, payload]
+                allCharacters: payload,
+                myFavorites: payload,
 
             }
 
         case DELETE_FAVORITES:
             return {
                 ...state,
-                myFavorites: myFavorites.filter(element => element.id !== payload),
-                allCharacters: allCharacters.filter(element => element.id !== payload)
+                myFavorites: payload,
+                allCharacters: payload,
             }
         case FILTER:
             if (payload === "Todos") {
