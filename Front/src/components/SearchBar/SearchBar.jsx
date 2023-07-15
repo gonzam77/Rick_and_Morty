@@ -8,6 +8,7 @@ function SearchBar({ onSearch }) {
 
    const [character, setCharacter] = useState("");
    const [errors, setErrors] = useState([])
+   const navigate = useNavigate();
 
    const save = (event) => {
 
@@ -21,7 +22,6 @@ function SearchBar({ onSearch }) {
       })
    }
 
-   const navigate = useNavigate();
 
    const handleKeyDown = (event) => {
       if (event.key === 'Enter') {

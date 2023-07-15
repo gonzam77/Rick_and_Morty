@@ -5,6 +5,7 @@ import javascriptImg from '../../assets/javascript.png'
 import reactImg from '../../assets/react.png'
 import redux from '../../assets/redux.png'
 
+
 const About = () => {
 
     const techSkills = [{ tech: 'Html', image: htmlImg }, { tech: 'Css', image: cssImg }, { tech: 'JavaScript', image: javascriptImg }, { tech: 'React', image: reactImg }, { tech: 'Redux', image: redux }]
