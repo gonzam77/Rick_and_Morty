@@ -17,6 +17,10 @@
     opacity: 0.9;
 }
 
+.favButton:hover {
+    cursor: pointer;
+}
+
 .details {
     font-size: 1.3em;
     margin-top: 10px;

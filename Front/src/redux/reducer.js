@@ -1,13 +1,19 @@
-import { FILTER_BY_FAVS, FILTER_BY_GENDER, ORDER, GET_FAVORITES, GET_CHARACTERS, GET_ALL_CHARACTERS } from "./action-types";
+import {
+    FILTER_BY_FAVS,
+    FILTER_BY_GENDER,
+    ORDER, GET_FAVORITES,
+    GET_CHARACTERS,
+    GET_ALL_CHARACTERS,
+} from "./action-types";
 
 const initialState = {
     myFavorites: [],
-    characters:[],
+    characters: [],
     allCharacters: []
 };
 
 function reducer(state = initialState, { type, payload }) {
-    
+
     const { allCharacters, myFavorites } = state
 
     switch (type) {
@@ -36,7 +42,6 @@ function reducer(state = initialState, { type, payload }) {
                 return {
                     ...state,
                     characters: allCharacters.filter(char => char.gender === payload)
-
                 }
             }
         case FILTER_BY_FAVS:
@@ -45,10 +50,10 @@ function reducer(state = initialState, { type, payload }) {
                     ...state,
                     characters: allCharacters
                 }
-            } else if (payload === 'notFav'){
+            } else if (payload === 'notFav') {
                 return {
                     ...state,
-                    characters: allCharacters.filter(char => char.isFav === false)
+                    characters: allCharacters.filter(char => char.is_fav === false)
 
                 }
             } else {
@@ -70,7 +75,7 @@ function reducer(state = initialState, { type, payload }) {
                     characters: allCharacters.sort((a, b) => b.id - a.id)
                 }
             }
-            return{...state}
+            return { ...state }
 
         default:
             return { ...state }

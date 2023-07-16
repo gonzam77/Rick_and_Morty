@@ -1,19 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Card from '../Card/Card.jsx';
 import styles from './Cards.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../../redux/actions.js';
 
 
-function Cards({ onClose, clean }) {
+function Cards({ clean }) {
 
    const dispatch = useDispatch();
    const characters = useSelector(state => state.characters);
-   console.log(characters);
+   const [chars, setChars] = useState(characters)
+
+   const onClose = (id) => {
+      const filteredChars = chars.filter(char => char.id !== id)
+      setChars(filteredChars)
+   }
 
    useEffect(() => {
       dispatch(actions.getAllCharacters());
-    }, [dispatch])
+      setChars(characters);
+   }, [dispatch])
 
    return (
       <div>
@@ -22,7 +28,7 @@ function Cards({ onClose, clean }) {
          </div>
          <div className={styles.cardsStyle}>
             {
-               characters?.map(({ name, species, gender, image, id }) => {
+               chars?.map(({ name, species, gender, image, id, is_fav }) => {
                   return <Card
                      key={id}
                      name={name}
@@ -31,6 +37,7 @@ function Cards({ onClose, clean }) {
                      image={image}
                      onClose={() => onClose(id)}
                      id={id}
+                     is_fav={is_fav}
                   />
                })
             }
@@ -38,6 +45,6 @@ function Cards({ onClose, clean }) {
       </div>
    )
 }
-            
+
 
 export default Cards;

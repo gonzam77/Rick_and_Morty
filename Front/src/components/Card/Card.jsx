@@ -1,25 +1,26 @@
 import style from './Card.module.css'
-import React, { useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import * as actions from '../../redux/actions'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 
-function Card({ image, name, gender, species, onClose, id, isFav }) {
+function Card({ image, name, gender, species, onClose, id, is_fav }) {
 
    const dispatch = useDispatch();
 
    const handleFavorites = () => {
       dispatch(actions.updateFavorites(id));
+      console.log("is_fav", is_fav);
    }
 
    return (
       <div className={style.container}>
          {
-            isFav ? (
-               <button onClick={handleFavorites}>❤️</button>
+            is_fav ? (
+               <button className={style.favButton} onClick={handleFavorites}>❤️</button>
             ) : (
-               <button onClick={handleFavorites}>🤍</button>
+               <button className={style.favButton} onClick={handleFavorites}>🤍</button>
             )
          }
          <button className={style.closeButton} onClick={onClose}>X</button>

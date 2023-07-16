@@ -4,7 +4,7 @@ const getFav = async (req, res) => {
     try {
         const response = await Character.findAll({
             where: {
-                isFav: true
+                is_fav: true
             }
         });
         if (response.length === 0) return res.status(404).json({ status: 404, message: 'Favorites not found' });

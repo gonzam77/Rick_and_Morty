@@ -32,14 +32,9 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    !access && navigate('/')
+    //!access && navigate('/')
   }, [access]);
 
-  const onClose = (id) => {
-    // setCharacters(
-    //   characters.filter((personaje) => personaje.id !== id)
-    // )
-  }
 
   const location = useLocation();
 
@@ -50,7 +45,7 @@ function App() {
       {location.pathname !== "/" && <Nav access={access} logout={logout} className='nav' />}
       <Routes>
         <Route path="/" element={<Form login={login} />} />
-        <Route path="/home" element={<Cards onClose={onClose} />} />
+        <Route path="/home" element={<Cards />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:detailId" element={<Detail />} />
         <Route path="/favorites" element={<Favorites />} />

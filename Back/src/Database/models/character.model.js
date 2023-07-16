@@ -35,7 +35,7 @@ const Character = database.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        isFav: {
+        is_fav: {
             type:DataTypes.BOOLEAN,
             defaultValue: false,
         }
