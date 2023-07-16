@@ -1,4 +1,4 @@
-const { Character } = require('../../Database/models/character.model');
+const  Character  = require('../../Database/models/character.model');
 const URL = 'http://rickandmortyapi.com/api/character/';
 
 
@@ -9,7 +9,7 @@ const getCharDetail = async function (req, res) {
     try {
         if(!id || id === '' || id.length === 0) return res.status(409).json({ status: 409, message: 'Param id is require'});
         
-        const response = await Character.find({
+        const response = await Character.findOne({
             where: {
                 id: id
             }

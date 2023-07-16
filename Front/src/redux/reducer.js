@@ -1,52 +1,73 @@
-import { ADD_FAVORITES, DELETE_FAVORITES, FILTER, ORDER } from "./action-types";
+import { FILTER_BY_FAVS, FILTER_BY_GENDER, ORDER, GET_FAVORITES, GET_CHARACTERS, GET_ALL_CHARACTERS } from "./action-types";
 
 const initialState = {
     myFavorites: [],
+    characters:[],
     allCharacters: []
 };
 
 function reducer(state = initialState, { type, payload }) {
     
-    const { myFavorites, allCharacters } = state
+    const { allCharacters, myFavorites } = state
 
     switch (type) {
-        case ADD_FAVORITES:
-            return {
-                ...state,
-                allCharacters: payload,
-                myFavorites: payload,
-
-            }
-
-        case DELETE_FAVORITES:
+        case GET_FAVORITES:
             return {
                 ...state,
                 myFavorites: payload,
-                allCharacters: payload,
             }
-        case FILTER:
+        case GET_CHARACTERS:
+            return {
+                ...state,
+                characters: payload
+            }
+        case GET_ALL_CHARACTERS:
+            return {
+                ...state,
+                characters: payload.data,
+                allCharacters: payload.data
+            }
+        case FILTER_BY_GENDER:
             if (payload === "Todos") {
                 return {
-                    myFavorites: allCharacters
+                    characters: allCharacters
                 }
             } else {
                 return {
                     ...state,
-                    myFavorites: allCharacters.filter(char => char.gender === payload)
+                    characters: allCharacters.filter(char => char.gender === payload)
 
+                }
+            }
+        case FILTER_BY_FAVS:
+            if (payload === "todos") {
+                return {
+                    ...state,
+                    characters: allCharacters
+                }
+            } else if (payload === 'notFav'){
+                return {
+                    ...state,
+                    characters: allCharacters.filter(char => char.isFav === false)
+
+                }
+            } else {
+                return {
+                    ...state,
+                    characters: myFavorites
                 }
             }
         case ORDER:
             if (payload === "Ascendente") {
                 return {
                     ...state,
-                    myFavorites: allCharacters.sort((a, b) => a.id - b.id)
+                    characters: allCharacters.sort((a, b) => a.id - b.id)
                 }
             }
             if (payload === "Descendente") {
                 return {
                     ...state,
-                    myFavorites: allCharacters.sort((a, b) => b.id - a.id)
+                    characters: allCharacters.sort((a, b) => b.id - a.id)
                 }
             }
             return{...state}

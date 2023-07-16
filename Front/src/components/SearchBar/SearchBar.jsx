@@ -2,26 +2,31 @@ import style from './SearchBar.module.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import validation from './validation '
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import * as actions from '../../redux/actions';
 
-
-function SearchBar({ onSearch }) {
+function SearchBar() {
 
    const [character, setCharacter] = useState("");
-   const [errors, setErrors] = useState([])
+   const [errors, setErrors] = useState([]);
    const navigate = useNavigate();
+   const dispatch = useDispatch();
+
+   async function onSearch(name) {
+      const response = await axios.get(`http://localhost:3001/rickandmorty/onsearch?name=${name}`)
+      dispatch(actions.searchCharacter(response.data));
+    };
 
    const save = (event) => {
-
       setErrors(
          validation(event.target.value)
       )
-
       setCharacter({
          ...character,
          id: event.target.value
       })
    }
-
 
    const handleKeyDown = (event) => {
       if (event.key === 'Enter') {

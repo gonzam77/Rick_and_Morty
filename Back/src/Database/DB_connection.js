@@ -7,8 +7,5 @@ const database = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/
     logging: false,
 })
 
-
-
-
 //exportamos la base de datos y los modelos
 module.exports = database;

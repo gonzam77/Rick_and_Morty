@@ -7,32 +7,16 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form'
 import Favorites from "./components/Favorites/Favorites"
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function App() {
 
-  const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
   const username = 'gonzam77@gmail.com';
   const password = 'henry1';
-
-
-  const clean = () => {
-    setCharacters([])
-  }
-
-
-  function onSearch(id) {
-    fetch(`http://localhost:3001/rickandmorty/onsearch/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
-        } else {
-          window.alert('No hay personajes con ese ID');
-        }
-      });
-  }
+  const dispatch = useDispatch();
+  const characters = useSelector(state => state.characters)
 
   function login(userData) {
     if (userData.password === password && userData.username === username) {
@@ -52,9 +36,9 @@ function App() {
   }, [access]);
 
   const onClose = (id) => {
-    setCharacters(
-      characters.filter((personaje) => personaje.id !== id)
-    )
+    // setCharacters(
+    //   characters.filter((personaje) => personaje.id !== id)
+    // )
   }
 
   const location = useLocation();
@@ -63,18 +47,14 @@ function App() {
     <div className='App' style={{ padding: '25px' }}>
       <h1 className="titulo">Rick and Morty</h1>
       {location.pathname !== '/favorites' && <h2 className="tituloChico">Rick and Morty</h2>}
-      {location.pathname !== "/" && <Nav access={access} logout={logout} className='nav' onSearch={onSearch} />}
+      {location.pathname !== "/" && <Nav access={access} logout={logout} className='nav' />}
       <Routes>
-        <Route path="/favorites" element={<Favorites />} />
         <Route path="/" element={<Form login={login} />} />
-        <Route
-          path="/home"
-          element={<Cards characters={characters} onClose={onClose} clean={clean} />}
-        />
+        <Route path="/home" element={<Cards onClose={onClose} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:detailId" element={<Detail />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
-
     </div>
   )
 }

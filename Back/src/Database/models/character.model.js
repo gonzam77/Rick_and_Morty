@@ -13,6 +13,7 @@ const Character = database.define(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
         },
         species: {
             type: DataTypes.STRING,
@@ -34,15 +35,17 @@ const Character = database.define(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        isFav: {
+            type:DataTypes.BOOLEAN,
+            defaultValue: false,
+        }
 
     },
     {
         timestamps: false,
-    },
-    {
         // No pluralization.
         freezeTableName: true,
-    }
+    },
 );
 
-module.exports = Character
+module.exports = Character;

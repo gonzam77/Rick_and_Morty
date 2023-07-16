@@ -14,7 +14,7 @@ function Favorites(props) {
         dispatch(actions.order(event.target.value))
     }
     const handleFilter = (event) => {
-        dispatch(actions.filter(event.target.value))
+        dispatch(actions.filterByGender(event.target.value))
     }
     
     return (
